@@ -151,7 +151,7 @@ footer .copyright p a{
 }
 
 /* ----------------- PORTFOLIO --------------- */
-.portfolio hr{
+hr.portfolio{
     margin:24px auto;
 }
 .portfolio_links {
