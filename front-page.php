@@ -22,72 +22,46 @@
                 </div>
             </div>
             <div class="row list">
-                <div class="col-md-4">
-                    <div class="contents shadow">
-                        <img src="images/latest_portfolio_01.jpg" alt="latest_portfolio_01">
-                        <div class="hover_contents">
-                            <div class="list_info">
-                                <h3><a href="">Project Title</a> <img src="images/portfolio_list_arrow.png" alt="list arrow"></h3>
-                                <p><a href="">Click to see project</a></p>
+
+                <!-- 카테고리 portfolio 최근거 3개 출력 -->
+
+                <?php
+
+                    query_posts( array('category_name'  => 'portfolio','posts_per_page' => 3) );
+
+                    // The Loop
+                    while ( have_posts() ) : the_post();
+                    ?>
+
+                    <div class="col-md-4">
+                        <div class="contents shadow">
+                            <?php
+                            if ( has_post_thumbnail() ) {
+                                the_post_thumbnail('full');
+                            }
+                            ?>
+                            <div class="hover_contents">
+                                <div class="list_info">
+                                    <h3><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a><img src="<?php echo IMAGES; ?>/portfolio_list_arrow.png" alt="list arrow"></h3>
+                                    <p><a href="<?php the_permalink(); ?>">Click to see project</a></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contents shadow">
-                        <img src="images/latest_portfolio_02.jpg" alt="latest_portfolio_02">
-                        <div class="hover_contents">
-                            <div class="list_info">
-                                <h3><a href="">Project Title</a> <img src="images/portfolio_list_arrow.png" alt="list arrow"></h3>
-                                <p><a href="">Click to see project</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contents shadow">
-                        <img src="images/latest_portfolio_03.jpg" alt="latest_portfolio_03">
-                        <div class="hover_contents">
-                            <div class="list_info">
-                                <h3><a href="">Project Title</a> <img src="images/portfolio_list_arrow.png" alt="list arrow"></h3>
-                                <p><a href="">Click to see project</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contents shadow">
-                        <img src="images/latest_portfolio_04.jpg" alt="latest_portfolio_04">
-                        <div class="hover_contents">
-                            <div class="list_info">
-                                <h3><a href="">Project Title</a> <img src="images/portfolio_list_arrow.png" alt="list arrow"></h3>
-                                <p><a href="">Click to see project</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contents shadow">
-                        <img src="images/latest_portfolio_05.jpg" alt="latest_portfolio_05">
-                        <div class="hover_contents">
-                            <div class="list_info">
-                                <h3><a href="">Project Title</a> <img src="images/portfolio_list_arrow.png" alt="list arrow"></h3>
-                                <p><a href="">Click to see project</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 shadow">
-                    <div class="contents">
-                        <img src="images/latest_portfolio_06.jpg" alt="latest_portfolio_06">
-                        <div class="hover_contents">
-                            <div class="list_info">
-                                <h3><a href="">Project Title</a> <img src="images/portfolio_list_arrow.png" alt="list arrow"></h3>
-                                <p><a href="">Click to see project</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </div> 
+      
+
+                    <?php
+                    endwhile;
+
+                    wp_reset_query();
+                    ?>
+
+
+
+
+      
+
+                
                 
             </div>
             <p class="porfolio_readmore">
