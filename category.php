@@ -26,7 +26,7 @@
             echo '<li><a href="http://localhost/wp/category/portfolio/" class="secondary-btn '.$allClass.'">All</a></li>';
 
             foreach( $categories as $category ) {
-              $is_current = strpos($currentUri,$category->name);    
+              $is_current = strpos($currentUri,strtolower($category->name));    
               $is_current ? $activeClass = 'active':$activeClass = '';
 
               $category_link = sprintf( 
