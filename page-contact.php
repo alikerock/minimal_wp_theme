@@ -14,9 +14,9 @@
                   <a href="mailto:hello@adipurdila.com">hello@adipurdila.com</a>               
               </p>
               <ul class="social_links">
-                  <li><a href=""><img src="images/twitter.png" alt="twitter"></a></li>
-                  <li><a href=""><img src="images/facebook.png" alt="facebook"></a></li>
-                  <li><a href=""><img src="images/dribble.png" alt="dribble"></a></li>
+                  <li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/twitter.png" alt="twitter"></a></li>
+                  <li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/facebook.png" alt="facebook"></a></li>
+                  <li><a href=""><img src="<?php bloginfo('template_url'); ?>/images/dribble.png" alt="dribble"></a></li>
               </ul>                                
           </div>
           <hr class="double">
@@ -26,7 +26,7 @@
                   Use the form below. All fields are required.
               </p>
               <div class="contact_form">
-                <div class="wpcf7 js" id="wpcf7-f82-o1" lang="ko-KR" dir="ltr">
+                <!-- <div class="wpcf7 js" id="wpcf7-f82-o1" lang="ko-KR" dir="ltr">
                   <div class="screen-reader-response">
                     <p role="status" aria-live="polite" aria-atomic="true"></p> 
                     <ul></ul>
@@ -74,12 +74,14 @@
                     </p>
                     <div class="wpcf7-response-output" aria-hidden="true"></div>
                   </form>
-                </div>    
+                </div>     -->
+                <?php echo do_shortcode( '[contact-form-7 id="878d7c5" title="quote"]' ); ?>
               </div>
           </div>
       </div>
-<script src="http://localhost/wp/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.8.1" id="swv-js"></script>
 
-<script src="http://localhost/wp/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.8.1" id="contact-form-7-js"></script>
+<!-- <script src="http://localhost/wp/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.8.1" id="swv-js"></script>
+
+<script src="http://localhost/wp/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.8.1" id="contact-form-7-js"></script> -->
 
 <?php get_footer();?>
