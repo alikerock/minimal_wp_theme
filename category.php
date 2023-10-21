@@ -59,7 +59,7 @@
                 <a href="" class="secondary-btn">2</a>      
                 <a href="" class="secondary-btn">3</a>      
                 <a href="" class="secondary-btn">4</a>       -->
-                <?php echo paginate_links(); ?>
+                <?php echo minimal_paginate_links(); ?>
             </p>
         </div>
 
